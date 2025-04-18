@@ -1,0 +1,376 @@
+.portfolio-page {
+    padding: 4rem 5%;
+    background: #000000;
+    min-height: calc(100vh - 70px);
+}
+
+.section-title {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 3rem;
+    font-family: Consolas, monospace;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    background: #000;
+    aspect-ratio: 4/3;
+}
+
+.portfolio-item {
+    position: relative;
+    background: #000;
+    cursor: pointer;
+    overflow: hidden;
+    height: 100%;
+}
+
+.portfolio-item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.portfolio-item:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.portfolio-item:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    height: 33.33%;
+}
+
+.portfolio-item:nth-child(4) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    height: 33.33%;
+    top: 33.33%;
+}
+
+.portfolio-item:nth-child(5) {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    height: 33.33%;
+    top: 66.66%;
+}
+
+.portfolio-item:nth-child(6) {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    height: 33.33%;
+}
+
+.portfolio-item:nth-child(7) {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    height: 33.33%;
+    top: 33.33%;
+}
+
+.portfolio-item:nth-child(8) {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    height: 33.33%;
+    top: 66.66%;
+}
+
+.portfolio-item:nth-child(9) {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    height: 33.33%;
+}
+
+.portfolio-item:nth-child(10) {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    height: 33.33%;
+    top: 33.33%;
+}
+
+.portfolio-item:nth-child(11) {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+    height: 33.33%;
+    top: 66.66%;
+}
+
+.portfolio-item:hover {
+    transform: none;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+.item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .item-info {
+    transform: translateY(0);
+}
+
+.item-info h3 {
+    color: #fff;
+    font-size: 0.9rem;
+    font-family: Consolas, monospace;
+    margin: 0;
+    text-align: center;
+}
+
+.portfolio-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 1200px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .portfolio-item:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+        top: 0;
+    }
+    
+    .portfolio-item:nth-child(2) {
+        grid-column: 1;
+        grid-row: 2;
+        top: 0;
+    }
+    
+    .portfolio-item:nth-child(3) {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        height: 33.33%;
+        top: 0;
+    }
+    
+    .portfolio-item:nth-child(4) {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        height: 33.33%;
+        top: 33.33%;
+    }
+    
+    .portfolio-item:nth-child(5) {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        height: 33.33%;
+        top: 66.66%;
+    }
+    
+    .portfolio-item:nth-child(6) {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        height: 33.33%;
+        top: 0;
+    }
+    
+    .portfolio-item:nth-child(7) {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        height: 33.33%;
+        top: 33.33%;
+    }
+    
+    .portfolio-item:nth-child(8) {
+        grid-column: 3;
+        grid-row: 1 / span 2;
+        height: 33.33%;
+        top: 66.66%;
+    }
+    
+    .portfolio-item:nth-child(9),
+    .portfolio-item:nth-child(10),
+    .portfolio-item:nth-child(11) {
+        display: none; 
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-page {
+        padding: 2rem 1rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+        aspect-ratio: auto;
+        gap: 10px;
+    }
+    
+    .portfolio-item {
+        position: relative;
+        top: 0 !important;
+        height: auto !important;
+        aspect-ratio: 1/1;
+    }
+    
+    .portfolio-item:nth-child(n) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    
+    .portfolio-item:nth-child(1) {
+        grid-column: 1 / span 2;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .carousel-container {
+        height: 300px;
+    }
+    
+    .item-info h3 {
+        font-size: 0.8rem;
+    }
+    
+    .carousel {
+        margin-bottom: 2rem;
+    }
+    
+    .carousel-slide a img {
+        height: 250px;
+    }
+    
+    .carousel-dots {
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-item:nth-child(n) {
+        grid-column: 1;
+    }
+    
+    .portfolio-item:nth-child(1) {
+        grid-column: 1;
+    }
+    
+    .item-info {
+        padding: 0.5rem;
+    }
+    
+    .item-info h3 {
+        font-size: 0.7rem;
+    }
+    
+    .carousel-slide a img {
+        height: 200px;
+    }
+}
+
+.carousel {
+    width: 100%;
+    margin-bottom: 4rem;
+    background: #000;
+    overflow: hidden;
+}
+
+.carousel-container {
+    max-width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.carousel-info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.carousel-tag {
+    font-family: Consolas, monospace;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.carousel-name {
+    font-family: Consolas, monospace;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.dot {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #E5D1A4;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background: #E5D1A4;
+} 

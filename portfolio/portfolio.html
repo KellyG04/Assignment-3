@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ikko Tanaka's Portfolio - Works</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+              <h1>Ikko Tanaka</h1>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="portfolio.html" class="dropdown-trigger">Portfolio</a>
+                    <div class="dropdown-menu">
+                        <ul>
+                            <li><a href="#poster">Poster Design</a></li>
+                            <li><a href="#branding">Branding</a></li>
+                            <li><a href="#bookbinding">Bookbinding</a></li>
+                            <li><a href="#exhibition">Exhibition Design</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="portfolio-page">
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <a href="#">
+                      <img src="imgs/the portfolio.jpg" alt="Tanaka Design 1">
+                    </a>
+                </div>
+                <div class="carousel-slide">
+                    <a href="#">
+                        <img src="imgs/The Emperor of Graphic Design.jpg" alt="Tanaka Design 2">
+                    </a>
+                </div>
+                <div class="carousel-slide">
+                    <a href="#">
+                        <img src="imgs/The-work-of-Ikko-Tanaka.png" alt="Tanaka Design 3">
+                    </a>
+                </div>
+                <div class="carousel-slide">
+                    <a href="#">
+                        <img src="imgs/Ikko_Header_2.jpg" alt="Tanaka Design 4">
+                    </a>
+                </div>
+                <div class="carousel-slide">
+                    <a href="#">
+                        <img src="imgs/quote119.jpg" alt="Tanaka Design 5">
+                    </a>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">His Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <a href="portfolio-detail.html">
+                    <img src="imgs/Asian Performing Arts Institute, UCLA.jpg" alt="Asian Performing Arts">
+                </a>
+                <div class="item-info">
+                    <h3>Asian Performing Arts Institute, UCLA</h3>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="imgs/Hanae Mori.jpg" alt="Hanae Mori">
+                <div class="item-info">
+                    <h3>Hanae Mori</h3>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="imgs/12 Japanese Masters.jpg" alt="12 Japanese Masters">
+                <div class="item-info">
+                    <h3>12 Japanese Masters</h3>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="imgs/JAGDA.jpg" alt="JAGDA">
+                <div class="item-info">
+                    <h3>JAGDA</h3>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="imgs/Morisawa & Co.. Ltd..jpg" alt="Morisawa & Co., Ltd.">
+                <div class="item-info">
+                    <h3>Morisawa & Co., Ltd.</h3>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="imgs/New National Theater, Tokyo.jpg" alt="New National Theater, Tokyo">
+                <div class="item-info">
+                    <h3>New National Theater, Tokyo</h3>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="imgs/Salvatore Ferragamo.jpg" alt="Salvatore Ferragamo">
+                <div class="item-info">
+                    <h3>Salvatore Ferragamo</h3>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="imgs/Gekijo.jpg" alt="Ginza Saison Theatre">
+                <div class="item-info">
+                    <h3>Ginza Saison Theatre "Gekijo"</h3>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="imgs/Salvatore Ferragamo 2.jpg" alt="Salvatore Ferragamo">
+                <div class="item-info">
+                    <h3>Salvatore Ferragamo</h3>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="imgs/Sogetsu Foundation.jpg" alt="Sogetsu Foundation">
+                <div class="item-info">
+                    <h3>Sogetsu Foundation</h3>
+                </div>
+            </div>
+            
+            <div class="portfolio-item">
+                <img src="imgs/Shirogane Shobo.jpg" alt="Shirogane Shobo">
+                <div class="item-info">
+                    <h3>Shirogane Shobo</h3>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function updateCarousel() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % 5;
+            updateCarousel();
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateCarousel();
+            });
+        });
+
+        setInterval(nextSlide, 3000);
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 移动端菜单控制
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            // 点击菜单按钮切换导航菜单
+            menuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                menuBtn.querySelector('i').classList.toggle('fa-bars');
+                menuBtn.querySelector('i').classList.toggle('fa-times');
+            });
+            
+            // 点击下拉菜单触发器
+            dropdowns.forEach(dropdown => {
+                const trigger = dropdown.querySelector('.dropdown-trigger');
+                trigger.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+            
+            // 点击页面其他区域关闭菜单
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.nav-links') && !e.target.closest('.mobile-menu-btn') && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuBtn.querySelector('i').classList.add('fa-bars');
+                    menuBtn.querySelector('i').classList.remove('fa-times');
+                }
+            });
+            
+            // 窗口调整大小时处理
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    navLinks.classList.remove('active');
+                    menuBtn.querySelector('i').classList.add('fa-bars');
+                    menuBtn.querySelector('i').classList.remove('fa-times');
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

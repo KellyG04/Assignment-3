@@ -1,0 +1,827 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Belanosima', sans-serif;
+    line-height: 1.6;
+    background: #000000;
+    color: #fff;
+    min-height: 100vh;
+    word-break: break-word;
+    padding-top: 70px;
+}
+
+.main-nav {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding:0 1rem;
+    background: linear-gradient(90deg, #e74c3c 0%, #8e44ad 33%, #2980b9 66%, #27ae60 100%);
+    font-family: 'Belanosima', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    height: 70px;
+    line-height: 70px;
+    margin-right: 80px;
+    margin-left: 50px;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin-right: 300px;
+    gap: 5rem;
+    height: 70px;
+    line-height: 70px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+.nav-links a:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.dropdown {
+    position: static;
+}
+
+.dropdown-trigger {
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 1001;
+}
+
+.dropdown:hover .dropdown-trigger {
+    background-color: #E5D1A4;
+    color: #262728;
+}
+
+.dropdown::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.dropdown:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #E5D1A4;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 2rem 5%;
+    padding-left: 0;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+.dropdown-menu li {
+    text-align: left;
+    margin-left: 60px;
+}
+
+.dropdown-menu a {
+    color: #262728;
+    font-size: 1.1rem;
+    display: block;
+    transition: color 0.3s ease;
+    height: auto;
+    line-height: normal;
+}
+
+.dropdown-menu a:hover {
+    color: #ffffff;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.hero {
+    padding: 0;
+    background: #1a1a1a;
+}
+
+.profile-container {
+    display: flex;
+    padding: 4rem 5%;
+    position: relative;
+    padding-bottom: 0;
+}
+
+.profile-image {
+    flex: 0 0 45%;
+    position: relative;
+    display: flex;
+    justify-content: left;
+}
+
+.profile-image img {
+    width: 78%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+}
+
+.profile-info {
+    flex: 0 0 55%;
+    /* padding: 0 0 0 4rem; */
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info h2 {
+    font-size: 2.2rem;
+    font-weight: normal;
+    font-family: 'Belanosima', sans-serif;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.bio-section h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Belanosima', sans-serif;
+    margin-bottom: 3.5rem;
+}
+
+.bio-section p {
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+}
+
+.personal-info {
+    margin-top: 3rem;
+}
+
+.mobile-personal-info {
+    display: none;
+    text-align: center;
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+.name {
+    font-weight: 500;
+    font-family: 'Belanosima', sans-serif;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.dates, .inducted {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.3rem;
+}
+
+@media (max-width: 1200px) {
+    .profile-info {
+        padding: 3rem 4rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .profile-container {
+        flex-direction: column;
+        padding-bottom: 3rem;
+    }
+
+    .profile-image {
+        flex: 0 0 auto;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .profile-info {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: 0rem 0rem;
+    }
+
+    .personal-info {
+        display: none;
+    }
+
+    .mobile-personal-info {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 1rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-left: 10px;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        z-index: 1002;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: #1a1a1a;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 80px 0 0;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        background-color: #262626;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        padding: 0;
+    }
+
+    .dropdown.active .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        max-height: 300px;
+    }
+
+    .dropdown-menu ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .dropdown-menu li {
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .dropdown-menu a {
+        padding: 12px 45px;
+        font-size: 1rem;
+        background-color: #E5D1A4;
+    }
+
+    .dropdown::before {
+        display: none;
+    }
+
+    .dropdown-trigger:after {
+        content: '\f107';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        margin-left: 10px;
+    }
+
+    .dropdown.active .dropdown-trigger:after {
+        content: '\f106';
+    }
+
+    .profile-info h2 {
+        font-size: 2rem;
+    }
+
+    .bio-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .bio-section p {
+        padding-left: 1rem;
+    }
+    .concept-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 0rem !important;
+    }
+    .design-concept {
+      padding: 3rem 5% !important;
+      background: #1a1a1a;
+  }
+}
+
+.design-concept {
+    padding: 4rem 5%;
+    background: #1a1a1a;
+}
+
+.concept-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.concept-text {
+    flex: 0 0 51%;
+}
+
+.concept-text h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Belanosima', sans-serif;
+    margin-bottom: 3.5rem;
+}
+
+.concept-item p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.concept-gallery {
+    flex: 0 0 48%;
+}
+
+.concept-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+    .design-concept h2 {
+        font-size: 2.5rem;
+    }
+
+    .concept-container {
+        position: static;
+    }
+
+    .concept-gallery {
+        position: static;
+        width: 100%;
+        margin: 2rem 0;
+    }
+
+    .concept-item,
+    .concept-item:nth-child(3),
+    .concept-item:nth-child(4) {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .concept-item h3 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .design-concept {
+        padding: 4rem 5%;
+    }
+
+    .design-concept h2 {
+        font-size: 2rem;
+    }
+}
+
+.achievements {
+    padding: 0rem 5%;
+    background: #1a1a1a;
+}
+
+.achievements-container {
+    display: flex;
+    gap: 4rem;
+}
+
+.achievements-left {
+    flex: 0 0 45%;
+    margin-top: 12px;
+}
+
+.art-showcase {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    margin-bottom: 1rem;
+}
+
+.art-showcase img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-caption {
+    padding: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.art-titles {
+    margin-top: 2rem;
+}
+
+.art-titles h3 {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.colorful {
+    color: #FF6B6B;
+}
+
+.colorless {
+    color: #4ECDC4;
+}
+
+.ordermade {
+    color: #FF6B6B;
+}
+
+.achievements-right {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.achievements-right h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Belanosima', sans-serif;
+    margin-bottom: -8rem;
+}
+
+.achievements-right p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.achievement-item {
+    margin-bottom: 0.5rem;
+}
+
+.achievement-item h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Belanosima', sans-serif;
+}
+
+.achievement-item p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 1200px) {
+    .achievements-container {
+        gap: 2rem;
+    }
+    
+    .achievements-right h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .achievements-container {
+        flex-direction: column;
+    }
+
+    .achievements-left,
+    .achievements-right {
+        flex: 0 0 100%;
+    }
+
+    .image-caption-bottom {
+        display: none;
+    }
+
+    .mobile-image-caption {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .achievements {
+        padding: 3rem 1rem;
+    }
+
+    .achievements-right h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .art-titles h3 {
+        font-size: 1.5rem;
+    }
+
+    .mobile-image-caption {
+        font-size: 1.2rem;
+    }
+}
+
+.recommended-works {
+    padding: 4rem 5%;
+    background: #1a1a1a;
+}
+
+.recommended-works h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    font-family: 'Belanosima', sans-serif;
+    text-align: left;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.work-item {
+    background: #333333;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.work-item:hover {
+    transform: translateY(-10px);
+}
+
+.work-image {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; 
+    overflow: hidden;
+}
+
+.work-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.work-info {
+    padding: 1.5rem;
+}
+
+.work-info h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Belanosima', sans-serif;
+}
+
+@media (max-width: 1200px) {
+    .works-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .recommended-works {
+        padding: 3rem 1rem;
+    }
+
+    .recommended-works h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .work-info h3 {
+        font-size: 1rem;
+    }
+}
+
+.portfolio-button {
+    margin-top: 4rem;
+}
+
+.see-more-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: #E5D1A4;
+  color: #262728;
+  text-decoration: none;
+  font-family: 'Belanosima', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.see-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(229, 209, 164, 0.3);
+}
+
+@media (max-width: 768px) {
+    .portfolio-button {
+        margin-top: 3rem;
+    }
+
+    .see-more-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+.image-caption-bottom {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    text-align: left;
+    /* margin-top: 9.5rem; */
+    margin-bottom: 10px;
+}
+
+.mobile-image-caption {
+    display: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .achievements-container {
+        flex-direction: column;
+    }
+
+    .achievements-left,
+    .achievements-right {
+        flex: 0 0 100%;
+    }
+
+    .image-caption-bottom {
+        display: none;
+    }
+
+    .mobile-image-caption {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .achievements {
+        padding: 3rem 1rem;
+    }
+
+    .achievements-right h2 {
+        font-size: 2rem;
+    }
+
+    .art-titles h3 {
+        font-size: 1.5rem;
+    }
+
+    .mobile-image-caption {
+        font-size: 1.2rem;
+        margin-bottom: 0rem;
+    }
+}
+
+/* 移动端菜单按钮 */
+.mobile-menu-btn {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-left: auto;
+    padding: 10px;
+}
+
+.mobile-menu-btn i {
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    font-family: 'Belanosima', sans-serif;
+    text-align: left;
+}
+
+.section-title a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.section-title a:hover {
+    color: #E5D1A4;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+}

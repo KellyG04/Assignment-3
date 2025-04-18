@@ -1,0 +1,143 @@
+/* 作品详情页面样式 */
+.detail-page {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    padding: 2rem 5%;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    color: #fff;
+    font-size: 2rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    z-index: 10;
+}
+
+.back-button:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.detail-container {
+    display: flex;
+    margin-top: 3rem;
+}
+
+.artwork-image {
+    flex: 0 0 50%;
+}
+
+.artwork-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.artwork-info {
+    flex: 0 0 50%;
+}
+
+.artwork-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.info-section {
+    margin-bottom: 1rem;
+}
+
+.info-section h2 {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.info-section p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.specs-list {
+    list-style: none;
+}
+
+.specs-list li {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.specs-list li span {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.artwork-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+    .detail-container {
+        gap: 3rem;
+    }
+    
+    .artwork-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .detail-container {
+        flex-direction: column;
+    }
+    
+    .artwork-image, .artwork-info {
+        flex: 0 0 100%;
+    }
+    
+    .artwork-image {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .detail-page {
+        padding: 1.5rem;
+    }
+    
+    .back-button {
+        top: 1rem;
+        left: 1rem;
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .detail-container {
+        margin-top: 4rem;
+    }
+    
+    .artwork-title {
+        font-size: 1.8rem;
+    }
+    
+    .info-section h2 {
+        font-size: 1.3rem;
+    }
+    
+    .info-section p, .specs-list li, .artwork-description {
+        font-size: 1rem;
+    }
+} 
